@@ -32,6 +32,10 @@ class Game
 
       $(".roster-selection.p#{index + 1}").css(top: "#{top}px", left: "#{left}px")
 
+      $(".character.p#{index + 1}")
+        .find(".image").html("""<img src="#{character.image}" />""").end()
+        .find(".name").text(character.name)
+
   start: ->
     @randomizeCharacters()
     @printCharacters()

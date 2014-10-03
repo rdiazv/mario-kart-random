@@ -9,11 +9,13 @@ $p4: #43ac53
 
 body
   padding: 20px
+  background: #000
 
 .roster-bg
   display: inline-block
   padding: 20px
   background: #000
+  margin-top: 100px
 
 .roster
   position: relative
@@ -63,3 +65,70 @@ body
     .title
       background: $p4
       text-shadow: darken($p4, 30%) 0 1px 1px
+
+
+.character
+  height: 200px
+  text-align: center
+  padding: 10px
+  background: #fff
+  border-radius: 4px
+  position: relative
+
+  .fa-question
+    font-size: 60px
+    color: #666
+    line-height: 200px
+
+  .player
+    position: absolute
+    top: 10px
+    left: 10px
+    font-weight: bold
+    font-size: 18px
+
+  .image
+    img
+      height: 150px
+
+  .name
+    font-size: 16px
+    font-weight: bold
+    color: #888
+    line-height: 36px
+
+  &.p1
+    .player
+      color: $p1
+
+  &.p2
+    .player
+      color: $p2
+
+  &.p3
+    .player
+      color: $p3
+
+  &.p4
+    .player
+      color: $p4
+
+.character + .character
+  margin-top: 20px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

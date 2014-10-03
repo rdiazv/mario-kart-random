@@ -1,23 +1,19 @@
 .container
   .row
     .col-xs-4
+      = render partial: 'character', locals: { player: 'p1' }
+      = render partial: 'character', locals: { player: 'p3' }
 
     .col-xs-4
       .roster-bg
         .roster
-          .roster-selection.p1
-            .title P1
-
-          .roster-selection.p2
-            .title P2
-
-          .roster-selection.p3
-            .title P3
-
-          .roster-selection.p4
-            .title P4
+          = render partial: 'roster_selection', locals: { player: 'p1' }
+          = render partial: 'roster_selection', locals: { player: 'p2' }
+          = render partial: 'roster_selection', locals: { player: 'p3' }
+          = render partial: 'roster_selection', locals: { player: 'p4' }
 
           = image_tag 'roster.png'
 
     .col-xs-4
-
+      = render partial: 'character', locals: { player: 'p2' }
+      = render partial: 'character', locals: { player: 'p4' }
