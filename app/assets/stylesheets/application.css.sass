@@ -1,3 +1,65 @@
 @import "bootstrap"
 @import "font-awesome-sprockets"
 @import "font-awesome"
+
+$p1: #c5bf18
+$p2: #2aaecc
+$p3: #c66a81
+$p4: #43ac53
+
+body
+  padding: 20px
+
+.roster-bg
+  display: inline-block
+  padding: 20px
+  background: #000
+
+.roster
+  position: relative
+
+.roster-selection
+  +size(67px, 26px)
+  position: absolute
+  border-style: solid
+  border-width: 2px
+
+  .title
+    position: absolute
+    height: 12px
+    line-height: 12px
+    padding: 0 10px
+    top: -14px
+    left: -2px
+    font-size: 8px
+    font-weight: bold
+    z-index: 1
+    color: #fff
+
+  &.p1
+    border-color: $p1
+
+    .title
+      background: $p1
+      text-shadow: darken($p1, 30%) 0 1px 1px
+
+  &.p2
+    border-color: $p2
+
+    .title
+      background: $p2
+      text-shadow: darken($p2, 30%) 0 1px 1px
+
+  &.p3
+    border-color: $p3
+
+    .title
+      background: $p3
+      text-shadow: darken($p3, 30%) 0 1px 1px
+
+  &.p4
+    border-color: $p4
+
+    .title
+      background: $p4
+      text-shadow: darken($p4, 30%) 0 1px 1px
