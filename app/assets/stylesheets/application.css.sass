@@ -1,32 +1,13 @@
 @import "bootstrap"
-@import "font-awesome-sprockets"
-@import "font-awesome"
-
-$p1: #c5bf18
-$p2: #2aaecc
-$p3: #c66a81
-$p4: #43ac53
-
-@mixin row-gutter($gutter)
-  margin-left: -($gutter)
-  margin-right: -($gutter)
-
-  > div
-    padding-left: $gutter
-    padding-right: $gutter
+@import "settings"
+@import "mixins"
+@import "module/roster"
+@import "module/character"
+@import "module/tournament"
 
 body
-  padding: 20px
+  padding: 20px 0
   background: #000
-
-.roster-bg
-  margin-top: 46px
-  text-align: center
-  display: inline-block
-  position: relative
-
-.roster
-  position: relative
 
 .players
   position: relative
@@ -46,133 +27,11 @@ body
     color: #aaa
     border: #333 solid 1px
     padding: 6px 10px
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+    font-family: $font-family-base
 
     &:hover
       border-color: #555
       color: #ccc
-
-.roster-selection
-  +size(67px, 26px)
-  position: absolute
-  border-style: solid
-  border-width: 2px
-
-  .title
-    position: absolute
-    height: 12px
-    line-height: 12px
-    padding: 0 10px
-    top: -14px
-    left: -2px
-    font-size: 8px
-    font-weight: bold
-    z-index: 1
-    color: #fff
-
-  &.p1
-    border-color: $p1
-
-    .title
-      background: $p1
-      text-shadow: darken($p1, 30%) 0 1px 1px
-
-  &.p2
-    border-color: $p2
-
-    .title
-      background: $p2
-      text-shadow: darken($p2, 30%) 0 1px 1px
-
-  &.p3
-    border-color: $p3
-
-    .title
-      background: $p3
-      text-shadow: darken($p3, 30%) 0 1px 1px
-
-  &.p4
-    border-color: $p4
-
-    .title
-      background: $p4
-      text-shadow: darken($p4, 30%) 0 1px 1px
-
-.character
-  height: 120px
-  text-align: center
-  padding: 10px
-  background: #fff
-  border-radius: 4px
-  position: relative
-
-  .fa-question
-    font-size: 60px
-    color: #666
-    line-height: 200px
-
-  .player
-    position: absolute
-    top: 10px
-    line-height: 1em
-    font-weight: bold
-    font-size: 18px
-    z-index: 1
-
-  .image
-    img
-      max-height: 100px
-
-  .name
-    font-size: 18px
-    font-weight: bold
-    color: #333
-
-  .vehicle
-    font-size: 16px
-    font-weight: bold
-    color: #888
-
-  .name, .vehicle
-    line-height: 1.2em
-    margin: 0
-
-  .row
-    +row-gutter(5px)
-    display: table
-    height: 100%
-
-    > div
-      display: table-cell
-      float: none
-      vertical-align: middle
-
-  &.p1
-    direction: rtl
-
-    .player
-      color: $p1
-      left: 10px
-
-  &.p2
-    .player
-      color: $p2
-      right: 10px
-
-  &.p3
-    direction: rtl
-
-    .player
-      color: $p3
-      left: 10px
-
-  &.p4
-    .player
-      color: $p4
-      right: 10px
-
-.character + .character
-  margin-top: 20px
 
 .tournaments
   text-align: center
@@ -183,52 +42,6 @@ body
 
   .row + .row
     margin-top: 50px
-
-.tournament
-  background: #111
-  border-radius: 4px
-  opacity: .3
-
-  .title
-    padding: 2px 0
-    border-top-right-radius: 4px
-    border-top-left-radius: 4px
-    line-height: 24px
-    position: relative
-    border-bottom: #222 solid 1px
-
-  .name
-    text-transform: uppercase
-    font-weight: bold
-    color: #888
-
-  img
-    +size(24px, 24px)
-    position: absolute
-    left: 10px
-    display: none
-
-  &.selected
-    opacity: 1
-
-.tracks
-  margin-bottom: 0
-
-.track
-  color: #444
-  border: transparent solid 1px
-  padding: 4px
-  position: relative
-
-  .badge
-    position: absolute
-    left: 4px
-    top: 5px
-
-  &.selected
-    border: #444 solid 1px
-    color: #fff
-    background: #222
 
 @media (min-width: $screen-md-min)
   .roster-row
@@ -248,13 +61,6 @@ body
       margin-top: 20px
 
 @media (max-width: $screen-xs-max)
-  .character
-    direction: ltr !important
-
-    .player
-      right: auto !important
-      left: 10px !important
-
   .players
     .row
       > div + div
@@ -269,17 +75,8 @@ body
       width: 100%
       padding: 10px
 
-  .tournament
-    display: none
-
-    &.selected
-      display: block
-
   .tournaments
     margin-top: 20px !important
 
     .row + .row
       margin-top: 0 !important
-
-    .tournament
-      margin-top: 20px

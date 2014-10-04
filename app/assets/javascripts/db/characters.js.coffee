@@ -144,10 +144,3 @@
     unlocked: false
   }
 ]
-
-@CHARACTERS.getRandom = ->
-  loop
-    character = @[Math.floor(Math.random() * @length)]
-    break if character.unlocked
-
-  character

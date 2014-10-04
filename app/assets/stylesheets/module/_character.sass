@@ -1,0 +1,78 @@
+.character
+  height: 120px
+  text-align: center
+  padding: 10px
+  background: #fff
+  border-radius: $border-radius-base
+  position: relative
+
+  .player
+    position: absolute
+    top: 10px
+    line-height: 1em
+    font-weight: bold
+    font-size: 18px
+    z-index: 1
+
+  .image
+    img
+      max-height: 100px
+
+  .name
+    font-size: 18px
+    font-weight: bold
+    color: #333
+
+  .vehicle
+    font-size: 16px
+    font-weight: bold
+    color: #888
+
+  .name, .vehicle
+    line-height: 1.2em
+    margin: 0
+
+  .row
+    +row-gutter(5px)
+    display: table
+    height: 100%
+
+    > div
+      display: table-cell
+      float: none
+      vertical-align: middle
+
+  &.p1
+    direction: rtl
+
+    .player
+      color: $p1
+      left: 10px
+
+  &.p2
+    .player
+      color: $p2
+      right: 10px
+
+  &.p3
+    direction: rtl
+
+    .player
+      color: $p3
+      left: 10px
+
+  &.p4
+    .player
+      color: $p4
+      right: 10px
+
+.character + .character
+  margin-top: 20px
+
+@media (max-width: $screen-xs-max)
+  .character
+    direction: ltr !important
+
+    .player
+      right: auto !important
+      left: 10px !important

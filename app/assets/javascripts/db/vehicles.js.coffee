@@ -152,10 +152,3 @@ VEHICLES.large = [
     unlocked: true
   }
 ]
-
-VEHICLES.small.getRandom = VEHICLES.medium.getRandom = VEHICLES.large.getRandom = ->
-  loop
-    vehicle = @[Math.floor(Math.random() * @length)]
-    break if vehicle.unlocked
-
-  vehicle
