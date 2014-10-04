@@ -38,17 +38,27 @@ class Game
       $(".roster-selection.p#{index + 1}").css(top: "#{top}px", left: "#{left}px")
 
       $(".character.p#{index + 1}")
-        .find(".image").html("""<img src="#{player.character.image}" />""").end()
+        .find(".image").html("""<img src="#{player.character.image}" class="img-responsive" />""").end()
         .find(".name").text(player.character.name).end()
         .find(".vehicle").text(player.vehicle.name)
 
-  randomizeTournament: ->
-    index = Math.floor(Math.random() * 8)
-    $(".tournament:eq(#{index})").addClass("selected")
+  randomizeTracks: ->
+    selected = []
+
+    for index in [1..4]
+      loop
+        track = Math.floor(Math.random() * 32)
+        break unless track in selected
+
+      selected.push track
+
+      $(".track:eq(#{track})").addClass("selected")
+        .prepend("""<span class="badge">#{index}</span>""")
+        .closest(".tournament").addClass("selected")
 
   start: ->
     @randomizeCharacters()
-    @randomizeTournament()
+    @randomizeTracks()
     @printCharacters()
 
 $ ->
