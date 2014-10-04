@@ -6,6 +6,9 @@
         = render partial: 'character', locals: { player: 'p3' }
 
       .col-xs-4
+        .controls
+          %button(type="button" data-new-game) Nuevo juego
+
         .roster-bg
           .roster
             = render partial: 'roster_selection', locals: { player: 'p1' }

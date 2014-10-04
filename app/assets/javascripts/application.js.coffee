@@ -42,6 +42,11 @@ class Game
         .find(".name").text(player.character.name).end()
         .find(".vehicle").text(player.vehicle.name)
 
+  cleanupTracks: ->
+    $(".tournament").removeClass("selected")
+      .find(".selected").removeClass("selected")
+      .find(".badge").remove()
+
   randomizeTracks: ->
     selected = []
 
@@ -56,11 +61,15 @@ class Game
         .prepend("""<span class="badge">#{index}</span>""")
         .closest(".tournament").addClass("selected")
 
-  start: ->
+  randomize: ->
     @randomizeCharacters()
+    @cleanupTracks()
     @randomizeTracks()
     @printCharacters()
 
 $ ->
-  @game = new Game
-  @game.start()
+  game = new Game
+  game.randomize()
+
+  $("[data-new-game]").on "click", ->
+    game.randomize()
