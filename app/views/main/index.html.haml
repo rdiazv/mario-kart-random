@@ -1,15 +1,10 @@
 .container
   .players
-    .row
-      .col-xs-4
-        = render partial: 'character', locals: { player: 'p1' }
-        = render partial: 'character', locals: { player: 'p3' }
+    .row.roster-row
+      .col-md-4.col-md-offset-4
+        %button(type="button" data-new-game) Nuevo juego
 
-      .col-xs-4
-        .controls
-          %button(type="button" data-new-game) Nuevo juego
-
-        .roster-bg
+        .roster-bg.hidden-xs.hidden-sm
           .roster
             = render partial: 'roster_selection', locals: { player: 'p1' }
             = render partial: 'roster_selection', locals: { player: 'p2' }
@@ -18,13 +13,23 @@
 
             = image_tag 'roster.png'
 
-      .col-xs-4
+    .row
+      .col-sm-6.col-md-4
+        = render partial: 'character', locals: { player: 'p1' }
+
+      .col-sm-6.col-md-4.col-md-offset-4
         = render partial: 'character', locals: { player: 'p2' }
+
+    .row
+      .col-sm-6.col-md-4
+        = render partial: 'character', locals: { player: 'p3' }
+
+      .col-sm-6.col-md-4.col-md-offset-4
         = render partial: 'character', locals: { player: 'p4' }
 
   .tournaments
     .row
-      .col-xs-3
+      .col-sm-6.col-md-3
         .tournament
           .title
             = image_tag 'tournament/champinon.webp'
@@ -35,7 +40,7 @@
             %li.track Barranco Champiñón
             %li.track Fábrica de Toad
 
-      .col-xs-3
+      .col-sm-6.col-md-3
         .tournament
           .title
             = image_tag 'tournament/flor.webp'
@@ -46,7 +51,7 @@
             %li.track Cima DK
             %li.track Mina de Wario
 
-      .col-xs-3
+      .col-sm-6.col-md-3
         .tournament
           .title
             = image_tag 'tournament/estrella.webp'
@@ -57,7 +62,7 @@
             %li.track Senda del Arce
             %li.track Volcán Gruñón
 
-      .col-xs-3
+      .col-sm-6.col-md-3
         .tournament
           .title
             = image_tag 'tournament/especial.png'
@@ -69,7 +74,7 @@
             %li.track Senda Arco Iris
 
     .row
-      .col-xs-3
+      .col-sm-6.col-md-3
         .tournament
           .title
             = image_tag 'tournament/caparazon.png'
@@ -80,7 +85,7 @@
             %li.track SNES Valle Fantasma 2
             %li.track N64 Pista Mario
 
-      .col-xs-3
+      .col-sm-6.col-md-3
         .tournament
           .title
             = image_tag 'tournament/platano.png'
@@ -91,7 +96,7 @@
             %li.track DS Ciudad Delfino
             %li.track GCN Estadio Waluigi
 
-      .col-xs-3
+      .col-sm-6.col-md-3
         .tournament
           .title
             = image_tag 'tournament/hoja.png'
@@ -102,7 +107,7 @@
             %li.track N64 Pista de la Junga DK
             %li.track GCN Circuito Mario
 
-      .col-xs-3
+      .col-sm-6.col-md-3
         .tournament
           .title
             = image_tag 'tournament/centella.png'
