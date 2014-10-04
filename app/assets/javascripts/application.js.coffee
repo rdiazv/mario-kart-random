@@ -42,8 +42,13 @@ class Game
         .find(".name").text(player.character.name).end()
         .find(".vehicle").text(player.vehicle.name)
 
+  randomizeTournament: ->
+    index = Math.floor(Math.random() * 8)
+    $(".tournament:eq(#{index})").addClass("selected")
+
   start: ->
     @randomizeCharacters()
+    @randomizeTournament()
     @printCharacters()
 
 $ ->
