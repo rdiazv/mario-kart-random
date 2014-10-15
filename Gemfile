@@ -39,3 +39,5 @@ gem 'spring',        group: :development
 
 gem 'haml-rails', '~> 0.5.3'
 gem 'bootstrap-sass', '~> 3.2.0.2'
+
+ruby "2.1.1"
