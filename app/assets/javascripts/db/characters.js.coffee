@@ -33,7 +33,7 @@
     name: "Toadette",
     image: "/assets/character/toadette.png",
     type: "small",
-    unlocked: false
+    unlocked: true
   },
   {
     name: "Koopa Troopa",
@@ -141,6 +141,6 @@
     name: "Dry Bowser",
     image: "/assets/character/drybowser.png",
     type: "large",
-    unlocked: false
+    unlocked: true
   }
 ]
