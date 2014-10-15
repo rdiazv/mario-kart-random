@@ -38,3 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'haml-rails', '~> 0.5.3'
+gem 'bootstrap-sass', '~> 3.2.0.2'

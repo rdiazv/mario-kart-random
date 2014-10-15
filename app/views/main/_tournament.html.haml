@@ -1,0 +1,7 @@
+.tournament
+  .title
+    %span.name= name
+
+  %ul.list-unstyled.tracks
+    - tracks.each do |track|
+      %li.track= track
