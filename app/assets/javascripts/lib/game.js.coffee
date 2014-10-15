@@ -18,7 +18,7 @@ class @Game
     for character in CHARACTERS.getDistinctRandom(4, (value) -> value.unlocked)
       @players.push
         character: character
-        vehicle: VEHICLES[character.type].getRandom()
+        vehicle: VEHICLES[character.type].getRandom (value) -> value.unlocked
 
   _getCharacterRosterOffset: (character) ->
     position = CHARACTERS.indexOf(character) + 1
