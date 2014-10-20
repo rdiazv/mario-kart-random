@@ -74,7 +74,7 @@ VEHICLES.medium = [
   },
   {
     name: "Súper Rayo GTI",
-    unlocked: false
+    unlocked: true
   },
   {
     name: "Moto Estándar",
@@ -94,7 +94,7 @@ VEHICLES.medium = [
   },
   {
     name: "Nitrocicleta",
-    unlocked: false
+    unlocked: true
   },
   {
     name: "Velocidelfín",
@@ -121,7 +121,7 @@ VEHICLES.large = [
   },
   {
     name: "Autodeslizador",
-    unlocked: false
+    unlocked: true
   },
   {
     name: "Libertad GT",
@@ -145,7 +145,7 @@ VEHICLES.large = [
   },
   {
     name: "Torpedo proyectil",
-    unlocked: false
+    unlocked: true
   },
   {
     name: "Fantasma",
