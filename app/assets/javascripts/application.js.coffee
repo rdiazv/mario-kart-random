@@ -6,6 +6,4 @@
 
 $ ->
   game = new Game
-  game.randomize()
-
   $("[data-new-game]").on "click", -> game.randomize()

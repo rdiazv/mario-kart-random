@@ -34,7 +34,7 @@ class @Game
 
   _selectRoster: (character, playerNumber) ->
     rosterOffset = @_getCharacterRosterOffset(character)
-    $(".roster-selection.p#{playerNumber}").css(rosterOffset)
+    $(".roster-selection.p#{playerNumber}").show().css(rosterOffset)
 
   _printCharacter: (player, playerNumber) ->
     image = "<img src='#{player.character.image}' class='img-responsive' />"
