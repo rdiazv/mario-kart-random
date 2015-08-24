@@ -1,16 +1,24 @@
 @import "bootstrap"
+@import "font-awesome-sprockets"
+@import "font-awesome"
 @import "settings"
 @import "mixins"
+@import "module/table"
 @import "module/roster"
 @import "module/character"
 @import "module/tournament"
+@import "module/settings-list"
 
 body
   padding: 20px 0
   background: #000
 
+.contents-container
+  background: #fff
+
 .players
   position: relative
+  margin-top: 15px
 
   .row
     +row-gutter(10px)
@@ -22,16 +30,16 @@ body
   text-align: center
   margin-bottom: 20px
 
-  button
-    background: transparent
-    color: #aaa
-    border: #333 solid 1px
-    padding: 6px 10px
-    font-family: $font-family-base
+.btn-deco
+  background: transparent
+  color: #aaa
+  border-color: #666
+  font-family: $font-family-base
 
-    &:hover
-      border-color: #555
-      color: #ccc
+  &:hover
+    text-decoration: none
+    border-color: #aaa
+    color: #ccc
 
 .tournaments
   text-align: center

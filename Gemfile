@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bundler', '>= 1.8.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -38,10 +39,18 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'redis', '~> 3.2.1'
+gem 'figaro', '~> 1.1.1'
+gem 'gon', '~> 6.0.1'
 
 gem 'haml-rails', '~> 0.5.3'
 gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'font-awesome-sass', '~> 4.4.0'
 
 gem 'rails_12factor', group: :production
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-underscore', '~> 1.8.3'
+end
 
 ruby "2.1.2"
