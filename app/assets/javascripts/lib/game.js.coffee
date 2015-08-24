@@ -15,13 +15,13 @@ class @Game
   _randomizeCharacters: ->
     @players = []
 
-    for character in CHARACTERS.getDistinctRandom(4, (value) -> value.unlocked)
+    for character in gon.config.characters.getDistinctRandom(4, (value) -> value.unlocked)
       @players.push
         character: character
-        vehicle: VEHICLES[character.type].getRandom (value) -> value.unlocked
+        vehicle: gon.config.vehicles[character.type].getRandom (value) -> value.unlocked
 
   _getCharacterRosterOffset: (character) ->
-    position = CHARACTERS.indexOf(character) + 1
+    position = gon.config.characters.indexOf(character) + 1
     row = Math.ceil(position / ROSTER_COLUMNS)
     col = position % ROSTER_COLUMNS
     col = ROSTER_COLUMNS if col == 0
