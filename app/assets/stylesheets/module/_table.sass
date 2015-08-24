@@ -1,0 +1,37 @@
+.css-table
+  display: table
+
+.css-tr
+  display: table-row
+
+.css-td, .css-th
+  display: table-cell
+
+.css-th
+  font-weight: bold
+
+.css-tbody
+  display: table-row-group
+
+.css-thead
+  display: table-header-group
+
+.css-tfoot
+  display: table-footer-group
+
+.css-table.table
+  background: $table-bg
+
+  > .css-tbody, > .css-thead, > .css-tfoot
+    > .css-tr
+      > .css-td, > .css-th
+        padding: $table-cell-padding
+
+  &.table-striped > .css-tbody > .css-tr:nth-of-type(odd)
+    background-color: $table-bg-accent
+
+  &.table-condensed
+    > .css-tbody, > .css-thead, > .css-tfoot
+      > .css-tr
+        > .css-td, > .css-th
+          padding: $table-condensed-cell-padding

@@ -21,7 +21,7 @@ class @Game
     for character in gon.config.characters.getDistinctRandom(4, (value) -> value.unlocked)
       @players.push
         character: character
-        vehicle: gon.config.vehicles[character.type].getRandom (value) -> value.unlocked
+        vehicle: _.filter(gon.config.vehicles, (vehicle) -> vehicle.type == character.type).getRandom (value) -> value.unlocked
 
   _getCharacterRosterOffset: (character) ->
     position = gon.config.characters.indexOf(character) + 1

@@ -1,8 +1,17 @@
+= content_for :javascript do
+  = javascript_include_tag 'index'
+
 .container
+  .pull-right
+    = link_to settings_url, class: 'btn btn-xs btn-deco' do
+      = icon('cog fa-fw', 'Ajustes')
+
+  .clearfix
+
   .players
     .row.roster-row
       .col-md-4.col-md-offset-4
-        %button(type="button" data-new-game) Nuevo juego
+        %button.btn.btn-lg.btn-deco(type="button" data-new-game) Nuevo juego
 
         .roster-bg.hidden-xs.hidden-sm
           .roster

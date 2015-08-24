@@ -1,0 +1,39 @@
+.container.contents-container
+  %h1 Desbloqueables
+
+  = form_tag update_settings_url, method: 'put', class: 'form-horizontal' do
+    %h2 Personajes
+    .row
+      - @config['characters'].group_by{|character| character['type']}.each do |type, characters|
+        .col-sm-4
+          %h4= type
+          %ul.list-group.settings-list
+            - characters.sort_by{|character| character['name']}.each do |character|
+              - next if character['base']
+
+              %li.list-group-item
+                .checkbox
+                  %label
+                    %input{ type: 'checkbox', name: 'settings[characters][]', value: character['id'], checked: character['unlocked'] }
+                    = character['name']
+
+    %h2 Vehículos
+    .row
+      - @config['vehicles'].group_by{|vehicle| vehicle['type']}.each do |type, vehicles|
+        .col-sm-4
+          %h4= type
+          %ul.list-group.settings-list
+            - vehicles.sort_by{|vehicle| vehicle['name']}.each do |vehicle|
+              - next if vehicle['base']
+
+              %li.list-group-item
+                .checkbox
+                  %label
+                    %input{ type: 'checkbox', name: 'settings[vehicles][]', value: vehicle['id'], checked: vehicle['unlocked'] }
+                    = vehicle['name']
+
+
+    .form-group
+      .col-xs-12
+        %button.btn.btn-lg.btn-success(type="submit")
+          Guardar cambios
