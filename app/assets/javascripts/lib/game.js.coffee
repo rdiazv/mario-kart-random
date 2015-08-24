@@ -7,6 +7,9 @@ class @Game
   ROSTER_HORI_OFFSET = 3
   ROSTER_COLUMNS = 4
 
+  constructor: ->
+    @_printNonAvailableCharacters()
+
   randomize: ->
     @_randomizeCharacters()
     @_randomizeTracks()
@@ -35,6 +38,12 @@ class @Game
   _selectRoster: (character, playerNumber) ->
     rosterOffset = @_getCharacterRosterOffset(character)
     $(".roster-selection.p#{playerNumber}").show().css(rosterOffset)
+
+  _printNonAvailableCharacters: ->
+    for character, index in gon.config.characters
+      continue if character.unlocked
+      rosterOffset = @_getCharacterRosterOffset(character)
+      $("""<div class="roster-selection non-available"></div>""").appendTo('.roster').show().css(rosterOffset)
 
   _printCharacter: (player, playerNumber) ->
     image = "<img src='#{player.character.image}' class='img-responsive' />"
