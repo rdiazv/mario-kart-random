@@ -4,4 +4,5 @@
 
   %ul.list-unstyled.tracks
     - tracks.each do |track|
-      %li.track= track
+      %li.track
+        = icon('check', track, class: 'pull-left')

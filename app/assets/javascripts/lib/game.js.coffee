@@ -13,6 +13,7 @@ class @Game
     @_alreadyPlayedCourses = []
 
   randomize: ->
+    @resetTracks() unless @hasMoreTracks()
     @_randomizeCharacters()
     @_randomizeTracks()
     @_printCharacters()
@@ -22,6 +23,7 @@ class @Game
 
   resetTracks: ->
     @_alreadyPlayedCourses = []
+    $(".track").removeClass("played")
 
   _randomizeCharacters: ->
     @players = []
@@ -67,7 +69,7 @@ class @Game
       @_selectRoster(player.character, index + 1)
 
   _selectTrack: (track, number) ->
-    $(".track:eq(#{track})").addClass("selected")
+    $(".track:eq(#{track})").addClass("selected played")
       .prepend("""<span class="badge">#{number}</span>""")
       .closest(".tournament").addClass("selected")
 

@@ -31,6 +31,9 @@
     padding: 4px
     position: relative
 
+    .fa
+      display: none
+
     .badge
       position: absolute
       left: 4px
@@ -38,11 +41,18 @@
       background: #fff
       color: $text-color
 
+    &.played
+      .fa
+        display: block
+
     &.selected
       border-top: #000 solid 1px
       border-bottom: #000 solid 1px
       color: #fff
       background: #222
+
+      .fa
+        display: none
 
 @media (max-width: $screen-xs-max)
   .tournament
