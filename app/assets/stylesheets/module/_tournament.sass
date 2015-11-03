@@ -1,5 +1,5 @@
 .tournament
-  background: #111
+  background: #333
   border-radius: $border-radius-base
   opacity: .3
 
@@ -19,11 +19,14 @@
   &.selected
     opacity: 1
 
+    .name
+      color: #fff
+
   .tracks
     margin-bottom: 0
 
   .track
-    color: #444
+    color: #777
     border: transparent solid 1px
     padding: 4px
     position: relative
@@ -32,9 +35,12 @@
       position: absolute
       left: 4px
       top: 5px
+      background: #fff
+      color: $text-color
 
     &.selected
-      border: #444 solid 1px
+      border-top: #000 solid 1px
+      border-bottom: #000 solid 1px
       color: #fff
       background: #222
 
