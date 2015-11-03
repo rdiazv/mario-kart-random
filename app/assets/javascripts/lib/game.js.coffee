@@ -6,14 +6,22 @@ class @Game
   ROSTER_VERT_OFFSET = 1
   ROSTER_HORI_OFFSET = 3
   ROSTER_COLUMNS = 4
+  TRACKS_NUMBER = 32
 
   constructor: ->
     @_printNonAvailableCharacters()
+    @_alreadyPlayedCourses = []
 
   randomize: ->
     @_randomizeCharacters()
     @_randomizeTracks()
     @_printCharacters()
+
+  hasMoreTracks: ->
+    @_alreadyPlayedCourses.length < TRACKS_NUMBER
+
+  resetTracks: ->
+    @_alreadyPlayedCourses = []
 
   _randomizeCharacters: ->
     @players = []
@@ -66,5 +74,9 @@ class @Game
   _randomizeTracks: ->
     $(".tournaments .selected").removeClass("selected").find(".badge").remove()
 
-    for track, index in [0..31].getDistinctRandom(4)
+    tracks = [0...TRACKS_NUMBER].getDistinctRandom 4, (value) =>
+      value not in @_alreadyPlayedCourses
+
+    for track, index in tracks
+      @_alreadyPlayedCourses.push(track)
       @_selectTrack(track, index + 1)
