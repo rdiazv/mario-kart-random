@@ -57,7 +57,7 @@ class MainController < ApplicationController
     [
       {
         'id' => 1,
-        'name' => 'Kart Estándar',
+        'name' => 'Kart Estándar P',
         'unlocked' => true,
         'base' => true,
         'type' => 'small'
@@ -99,7 +99,7 @@ class MainController < ApplicationController
       },
       {
         'id' => 7,
-        'name' => 'Moto Estándar',
+        'name' => 'Moto Estándar P',
         'unlocked' => true,
         'base' => true,
         'type' => 'small'
@@ -141,7 +141,7 @@ class MainController < ApplicationController
       },
       {
         'id' => 13,
-        'name' => 'Kart Estándar',
+        'name' => 'Kart Estándar M',
         'unlocked' => true,
         'base' => true,
         'type' => 'medium'
@@ -176,14 +176,14 @@ class MainController < ApplicationController
       },
       {
         'id' => 18,
-        'name' => 'Súper Rayo GTI',
+        'name' => 'Fórmula N',
         'unlocked' => false,
         'base' => false,
         'type' => 'medium'
       },
       {
         'id' => 19,
-        'name' => 'Moto Estándar',
+        'name' => 'Moto Estándar M',
         'unlocked' => true,
         'base' => true,
         'type' => 'medium'
@@ -225,7 +225,7 @@ class MainController < ApplicationController
       },
       {
         'id' => 25,
-        'name' => 'Kart Estándar',
+        'name' => 'Kart Estándar G',
         'unlocked' => true,
         'base' => true,
         'type' => 'large'
@@ -267,7 +267,7 @@ class MainController < ApplicationController
       },
       {
         'id' => 31,
-        'name' => 'Moto Estándar',
+        'name' => 'Moto Estándar G',
         'unlocked' => true,
         'base' => true,
         'type' => 'large'
@@ -295,7 +295,7 @@ class MainController < ApplicationController
       },
       {
         'id' => 35,
-        'name' => 'Torpedo proyectil',
+        'name' => 'Proyectil',
         'unlocked' => false,
         'base' => false,
         'type' => 'large'
